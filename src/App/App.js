@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 // Css
 import './App.css';
+import Navbar from './Navbar.js';
 
 
 
@@ -50,14 +51,16 @@ class App extends Component {
   render() {
     return (
     <div className="App"> 
+        <Navbar/>
       <div className="Henarfy">
+      
         <h1>Henarfy</h1>
        <button onClick={this.onClick}>Iniciar sesión</button>
        <button onClick={this.onClick}>Perfil de usuario</button>
       </div>
       <div className="container">
         
-        <h2>Top éxito</h2>
+        <h2>Top éxitos</h2>
         <ul>
           
             <Glossary terms={terms} />

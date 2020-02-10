@@ -3,7 +3,15 @@
   max-width: 50em;
 }
 
-.App h1 {
+
+
+.Henarfy h1 {
   text-align: right;
+  color:red;
+  
 }
 
+
+nav {
+  background-color: brown;
+}
