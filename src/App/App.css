@@ -1,6 +1,5 @@
 .App {
   margin: 2em auto;
-  max-width: 110em;
 }
 
 
@@ -21,9 +20,10 @@ hr {border: 2px inset #eee; height: 1px; width: 100%;}
 
 
 nav {
-  background-color:#b3ffb3;
+  background-color: black;
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 main {
@@ -31,8 +31,9 @@ main {
 }
 
 .container {
+  clear: both;
+  width: 100%;
   margin: 2em auto;
-  max-width: 100em;
   color:#003300 ;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -41,7 +42,7 @@ main {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #333;
 }
 

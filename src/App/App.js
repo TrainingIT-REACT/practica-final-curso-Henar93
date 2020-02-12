@@ -8,9 +8,7 @@ import './App.css';
 
 //importar páginas 
 
-import Home from './Rutas/Home';
-import About from './Rutas/About';
-//import Musica from './Rutas/Musica';
+
 
 
 //import Navbar from './Menu/general.js';
@@ -22,29 +20,24 @@ import Glossary from './Glossary';
 
 
 
-const close =() =><p>chaO</p>; 
+// const close =() =><p>chaO</p>; 
 
 
 
 
 
-const cerrar = ({ match }) => <div>
-  <p>Para más info</p>
-  <p>
-    <NavLink activeClassName="active" to={`${match.url}/close`}>Anídate en la marina</NavLink>
-    {' '}
+// const cerrar = ({ match }) => <div>
+//   <p>Para más info</p>
+//   <p>
+//     <NavLink activeClassName="active" to={`${match.url}/close`}>Anídate en la marina</NavLink>
+//     {' '}
   
-  </p>
+//   </p>
 
-</div>;
+// </div>;
 
 
-const Musica = ({Musica}) =>(
-  <div>
-    <p>Example musicote</p>
 
-  </div>
-)
 
 
 // List de términos para el glosario
@@ -97,10 +90,8 @@ class App extends Component {
       <Router>
         <div className="App"> 
         <h1>Henarfy</h1>
-        <NavLink activeClassName="active"  activeStyle="active"  to="/me">Prueba1</NavLink>
-        <NavLink activeclassName="active" to="/about">Prueba2</NavLink>
-        <NavLink activeclassName="active"  to="/musica">Música</NavLink>
-        <NavLink activeclassName="active"  to="/cerrar">Close</NavLink>
+ 
+   
         
         <Navbar/>
          
@@ -119,10 +110,7 @@ class App extends Component {
    
         </div>
     </div>
-    <Route path="/about" exact component={Home} />
-    <Route path="/me" exact component={About} /> 
-    <Route path="/musica" exact component={Musica} /> 
-    <Route path="/cerrar" exact component={cerrar} /> 
+
 </Router>
     </Suspense>
     );
