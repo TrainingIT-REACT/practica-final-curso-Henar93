@@ -1,17 +1,110 @@
 .App {
   margin: 2em auto;
-  max-width: 50em;
+  max-width: 110em;
 }
 
 
 
-.Henarfy h1 {
+.App h1 {
+  font-family:Arial, Helvetica, sans-serif;
+
   text-align: right;
-  color:red;
-  
+  color:#003300 
 }
+
+.navbar-header a{
+  text-align: left;
+
+}
+
+hr {border: 2px inset #eee; height: 1px; width: 100%;}
 
 
 nav {
-  background-color: brown;
+  background-color:#b3ffb3;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-color: #00cc66
+}
+
+.container {
+  margin: 2em auto;
+  max-width: 100em;
+  color:#003300 ;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar-header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar-header li {
+  float: left;
+}
+
+.navbar-header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar-header li a:hover {
+  background-color: #111;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.active {
+  text-decoration:none;
+  font-weight:bold ;
+  color: #b3ffb3;
+
+
 }
