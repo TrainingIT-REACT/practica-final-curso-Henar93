@@ -1,11 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
+
+import { Provider } from "react-redux";
+
+
+
+
+// Store
+import store from '../store';
+
 import './general.css';
 import Musica from '../Rutas/Musica';
 import Home from '../Rutas/Home';
 import About from '../Rutas/About';
 
-
+import UpName from '../Rutas/UpName';
 
 //const close =() =><p>chaO</p>; 
 
@@ -24,12 +33,14 @@ const cerrar = ({ match }) => <div>
 </div>;
 
 
+
 class Navbar extends React.Component {
 
     render() {
 
         return (
             <Router>
+                <Provider store={store}>
                 <nav className="navbar navbar-inverse" >
                     <div className="container-fluid">
                         <div className="navbar-header">
@@ -38,7 +49,7 @@ class Navbar extends React.Component {
                                 <li><NavLink to="/" >Inicio sesión</NavLink></li>
                                 <li> 
                                     <div class="dropdown">
-                                        <button class="dropbtn">Dropdown</button>
+                                        <button class="dropbtn"><UpName/></button>
                                         <div class="dropdown-content">
                                             <NavLink to="/about" >l1</NavLink>
                                             <p>Link 2</p>
@@ -46,17 +57,21 @@ class Navbar extends React.Component {
                                         </div>
                                     </div>
                                 </li>
+                              
                                 <li><NavLink to="/cerrar" >Cerrar</NavLink> </li>
                             </ul>
+                        
                         </div>
                     </div>
              
                 </nav>
                 
+                
     <Route path="/musica" exact component={Musica} /> 
     <Route path="/" exact component={Home} /> 
     <Route path="/about" exact component={About} />
-    <Route path="/cerrar" exact component={cerrar} /> 
+    <Route path="/cerrar" exact component={cerrar} />
+    </Provider>
             </Router>
         )
     }
