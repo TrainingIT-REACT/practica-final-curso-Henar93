@@ -1,36 +1,14 @@
-
 import React from "react";
-import { Provider } from "react-redux";
-//import { connect } from 'react-redux';
 
-
-
-// Store
-import store from '../store';
-
-
-
-
-
-
-
-// Componentes
-import UpdateName from '../UpdateName';
-import UpName from './UpName'
- class Home extends React.Component{
-     render(){
-        return <Provider store={store}>
-        <div className="App container">        
-            <UpdateName />
-          
-        </div>
-
-      </Provider>
+class Home extends React.Component{
+    render(){
+        return <div>
+                    <p>Esta es tu home  </p>
+                    <hr></hr>  
+            
+                   
+             </div>
     }
- }
-
-
-
-
+}
 
 export default Home;

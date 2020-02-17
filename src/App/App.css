@@ -20,14 +20,17 @@ hr {border: 2px inset #eee; height: 1px; width: 100%;}
 
 
 nav {
-  background-color: black;
+  background-color: 
+  
+
+  #a6a6a6;
   margin: 0;
   padding: 0;
   display: flex;
 }
 
 main {
-  background-color: #00cc66
+  background-color:  #0edf0e
 }
 
 .container {

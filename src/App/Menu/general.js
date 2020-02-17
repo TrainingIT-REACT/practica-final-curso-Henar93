@@ -24,9 +24,9 @@ import UpName from '../Rutas/UpName';
 import PrivateRoute from '../Context/PrivateRoute';
 
 const cerrar = ({ match }) => <div>
-  <p>Para más info</p>
+  <p>Para cerrar sesión haz click </p>
   <p>
-    <NavLink activeClassName="active" to={`${match.url}/close`}>Anídate en la marina</NavLink>
+    <NavLink activeClassName="active" to={`${match.url}/close`}>aquí</NavLink>
     {' '}
   
   </p>
@@ -60,21 +60,23 @@ class Navbar extends React.Component {
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <ul>
-                                <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/musica" >Perfil</NavLink></li>
-                                <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/inicio_sesion" >Inicio sesion</NavLink></li>
-                                <li> 
+                            <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none" /></svg></NavLink></li>
+  <li> 
                                     <div class="dropdown">
                                         <button class="dropbtn"><UpName/></button>
                                         <div class="dropdown-content">
-                                            <NavLink  to="/about" >l1</NavLink>
-                                            <p>Link 2</p>
-                                            <p>Link 3</p>
+
+                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/inicio_sesion" >Inicio sesion</NavLink>
+                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/musica" >Perfil</NavLink>
+                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/musica" >Música</NavLink>
+                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/Cerrar" >Cerrar</NavLink>
                                         </div>
                                     </div>
                                 </li>
-                                <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/cerrar" >Cerrar</NavLink> </li>
+
                             </ul>
                         </div>
+                        
                     </div>
            
                 </nav>

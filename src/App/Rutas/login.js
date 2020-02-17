@@ -4,6 +4,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 // Contexto de usuario
 import UserContext from '../Context/user';
+import { Provider } from "react-redux";
 //Css
 
 import './login.css';
@@ -12,8 +13,28 @@ import './login.css';
 
 
 
+
+
+
+// Store
+import store from '../store';
+
+
+
+
+
+// Componentes
+import UpdateName from '../UpdateName';
+
+
+
+
+
+
+
 const Login = ({ location }) => {
   return <UserContext.Consumer>
+    
     {({ signedIn, updateUser }) => {
       return <div>
         { signedIn ? (
@@ -21,7 +42,7 @@ const Login = ({ location }) => {
         ) : (
           <>
             Introduce tu nombre en la URL.
-  Por ejemplo: <Link to="/inicio_sesion/cris">/inicio_sesion/cris</Link>
+             <Link to="/inicio_sesion/cris">/inicio_sesion/cris</Link>
             <button onClick={() => updateUser(true)}>Login</button>
             { (location.state && location.state.message) &&
               <p>
@@ -30,8 +51,15 @@ const Login = ({ location }) => {
             }
           </>
         )}
+        <Provider store={store}>
+            <div className="App container">        
+            <UpdateName />
+          
+        </div>
+        </Provider>
       </div>
     }}
+ 
   </UserContext.Consumer>;
 }
 

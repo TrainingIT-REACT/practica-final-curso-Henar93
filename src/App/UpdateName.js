@@ -15,7 +15,7 @@ const UpdateName = ({ updateName }) => {
 
   return <form onSubmit={onSubmit}>
     <label htmlFor="name">¿Cuál es tu nombre?</label>
-    <input id="name" type="text" ref={input} placeholder="Angel, Tana, Raquel,..." />
+    <input id="name" type="text" ref={input} placeholder="Angel, Tana, Raquel,..."    width="48" padding="48"/> 
     <button>Actualizar nombre</button>
   </form>
 }
