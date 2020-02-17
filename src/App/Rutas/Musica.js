@@ -1,22 +1,13 @@
-import React from "react";
+import React from 'react';
 
-class Musica extends React.Component{
-    render(){
-       return <div>
-                    <p>Álbum </p>
-                    <hr></hr>  
-                  <p>Álbum</p>
-                   <hr></hr>  
-                   <p>Álbum</p>
-                   <hr></hr>  
-                   <p>Álbum</p>
-                   <hr></hr>  
-                   <p>Álbum</p>
-                   <hr></hr>  
-         
-    <hr></hr>
-           </div>
-   }
+// Este componente utiliza el parámetro para mostrarlo en la interfaz
+const Admin = () => {
+  return <div>
+    <h2>Código de acceso</h2>
+    <p>
+      El código de acceso secreto para hoy es: <b>React16</b>
+    </p>
+  </div>;
 }
 
-export default Musica;
+export default Admin;

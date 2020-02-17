@@ -1,17 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
+import {Provider} from "react-redux";
 import './general.css';
 import Musica from '../Rutas/Musica';
-import Home from '../Rutas/Home';
 import About from '../Rutas/About';
+import Login from '../Rutas/login';
+import Home from '../Rutas/Home';
+import UserContext from '../Context/user';
 
 
 
+
+
+// Store
+import store from '../store';
+
+import UpName from '../Rutas/UpName';
 //const close =() =><p>chaO</p>; 
 
 
 
-
+// Componente para definir rutas privadas
+import PrivateRoute from '../Context/PrivateRoute';
 
 const cerrar = ({ match }) => <div>
   <p>Para más info</p>
@@ -25,38 +35,57 @@ const cerrar = ({ match }) => <div>
 
 
 class Navbar extends React.Component {
-
+    constructor(props) {
+        super(props);
+    
+        // Bind de los métodos
+        this.updateUser = this.updateUser.bind(this);
+    
+        this.state = {
+          signedIn: false,
+          updateUser: this.updateUser,
+        }
+      }
+    
+      updateUser(signedIn) {
+        this.setState(() => ({ signedIn }));
+      }
     render() {
 
         return (
             <Router>
+                 <UserContext.Provider value={this.state}>
+                     <Provider store={store}>
                 <nav className="navbar navbar-inverse" >
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <ul>
-                                <li><NavLink to="/musica" >Perfil</NavLink></li>
-                                <li><NavLink to="/" >Inicio sesión</NavLink></li>
+                                <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/musica" >Perfil</NavLink></li>
+                                <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/inicio_sesion" >Inicio sesion</NavLink></li>
                                 <li> 
                                     <div class="dropdown">
-                                        <button class="dropbtn">Dropdown</button>
+                                        <button class="dropbtn"><UpName/></button>
                                         <div class="dropdown-content">
-                                            <NavLink to="/about" >l1</NavLink>
+                                            <NavLink  to="/about" >l1</NavLink>
                                             <p>Link 2</p>
                                             <p>Link 3</p>
                                         </div>
                                     </div>
                                 </li>
-                                <li><NavLink to="/cerrar" >Cerrar</NavLink> </li>
+                                <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/cerrar" >Cerrar</NavLink> </li>
                             </ul>
                         </div>
                     </div>
-             
+           
                 </nav>
-                
-    <Route path="/musica" exact component={Musica} /> 
-    <Route path="/" exact component={Home} /> 
-    <Route path="/about" exact component={About} />
-    <Route path="/cerrar" exact component={cerrar} /> 
+               
+                <PrivateRoute path="/musica" exact component={Musica} />  
+                <Route path="/inicio_sesion" exact component={Login} /> 
+                <Route path="/about" exact component={About} />
+                <Route path="/" exact component={Home} /> 
+                <Route path="/cerrar" exact component={cerrar} /> 
+                </Provider>
+                </UserContext.Provider>
             </Router>
         )
     }

@@ -10,7 +10,6 @@ import './App.css';
 
 
 
-
 //import Navbar from './Menu/general.js';
 import Loader from './Menu/Loader';
 
@@ -19,22 +18,6 @@ import Loader from './Menu/Loader';
 import Glossary from './Glossary';
 
 
-
-// const close =() =><p>chaO</p>; 
-
-
-
-
-
-// const cerrar = ({ match }) => <div>
-//   <p>Para más info</p>
-//   <p>
-//     <NavLink activeClassName="active" to={`${match.url}/close`}>Anídate en la marina</NavLink>
-//     {' '}
-  
-//   </p>
-
-// </div>;
 
 
 
@@ -64,6 +47,8 @@ class App extends Component {
       loading: true,
       albums: []
     }
+
+
   }
 
   async componentDidMount() {
@@ -80,36 +65,26 @@ class App extends Component {
     }
   }
 
+
+
   render() {
     
     return (
 
       // <Suspense maxDuration={150} fallback="Cargando página">
       <Suspense fallback={<Loader />}>
-    
       <Router>
         <div className="App"> 
-        <h1>Henarfy</h1>
- 
-   
-        
-        <Navbar/>
-         
-      
-               
-          <div className="container">
-        
-          <h2 >Top éxitos</h2>
-     
-               <hr/>
-              <ul>
-          
-               <Glossary terms={terms} />
-        
-               </ul>
-   
-        </div>
-    </div>
+          <h1>Henarfy</h1>
+            <Navbar/>        
+            <div className="container">    
+                <h2 >Top éxitos</h2>
+                 <hr/>
+                 <ul>
+                     <Glossary terms={terms} />
+                </ul>
+            </div>
+         </div>
 
 </Router>
     </Suspense>

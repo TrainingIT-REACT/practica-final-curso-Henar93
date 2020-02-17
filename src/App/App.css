@@ -64,12 +64,13 @@ main {
 }
 
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: black;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  border-radius: 0%;
 }
 
 .dropdown {
