@@ -8,14 +8,11 @@ import { Provider } from "react-redux";
 // Store
 import store from '../store';
 
-// Componentes
-import UpdateName from '../UpdateName';
 
 
 
 
-// Store
-import store from '../store';
+
 
 // Componentes
 import UpdateName from '../UpdateName';
