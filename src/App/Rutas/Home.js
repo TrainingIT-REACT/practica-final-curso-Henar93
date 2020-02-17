@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Provider } from "react-redux";
 //import { connect } from 'react-redux';
@@ -10,6 +11,15 @@ import store from '../store';
 // Componentes
 import UpdateName from '../UpdateName';
 
+
+
+
+// Store
+import store from '../store';
+
+// Componentes
+import UpdateName from '../UpdateName';
+import UpName from './UpName'
  class Home extends React.Component{
      render(){
         return <Provider store={store}>
@@ -17,7 +27,7 @@ import UpdateName from '../UpdateName';
             <UpdateName />
           
         </div>
-        
+
       </Provider>
     }
  }

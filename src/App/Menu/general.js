@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import {Provider} from "react-redux";
+
 import './general.css';
 import Musica from '../Rutas/Musica';
 import About from '../Rutas/About';
@@ -8,7 +9,7 @@ import Login from '../Rutas/login';
 import Home from '../Rutas/Home';
 import UserContext from '../Context/user';
 
-
+import UpName from '../Rutas/UpName';
 
 
 
@@ -34,6 +35,7 @@ const cerrar = ({ match }) => <div>
 </div>;
 
 
+
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
@@ -54,8 +56,11 @@ class Navbar extends React.Component {
 
         return (
             <Router>
+
                  <UserContext.Provider value={this.state}>
                      <Provider store={store}>
+
+
                 <nav className="navbar navbar-inverse" >
                     <div className="container-fluid">
                         <div className="navbar-header">
@@ -72,8 +77,11 @@ class Navbar extends React.Component {
                                         </div>
                                     </div>
                                 </li>
+
                                 <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/cerrar" >Cerrar</NavLink> </li>
+
                             </ul>
+                        
                         </div>
                     </div>
            
@@ -86,6 +94,7 @@ class Navbar extends React.Component {
                 <Route path="/cerrar" exact component={cerrar} /> 
                 </Provider>
                 </UserContext.Provider>
+
             </Router>
         )
     }
