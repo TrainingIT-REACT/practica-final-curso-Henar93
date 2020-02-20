@@ -14,7 +14,6 @@ import UserContext from '../Context/user';
 
 // Store
 import store from '../store';
-
 import UpName from '../Rutas/UpName';
 //const close =() =><p>chaO</p>; 
 
@@ -71,9 +70,14 @@ class Navbar extends React.Component {
                                             <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/musica" >Música</NavLink>
                                             <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/Cerrar" >Cerrar</NavLink>
                                         </div>
+   
                                     </div>
+  
                                 </li>
-
+<li>                                  <div class="minombre">
+                                        <h2>Henarfy</h2>
+                                    </div>
+                                    </li>
                             </ul>
                         </div>
                         
@@ -94,6 +98,9 @@ class Navbar extends React.Component {
 };
 //Navbar = withRouter(Navbar);  
 
+
 export default Navbar;
+
+
 
 

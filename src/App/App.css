@@ -4,12 +4,6 @@
 
 
 
-.App h1 {
-  font-family:Arial, Helvetica, sans-serif;
-
-  text-align: right;
-  color:#003300 
-}
 
 .navbar-header a{
   text-align: left;
@@ -20,17 +14,15 @@ hr {border: 2px inset #eee; height: 1px; width: 100%;}
 
 
 nav {
-  background-color: 
-  
-
-  #a6a6a6;
+  background-color:  #1b3891;
   margin: 0;
   padding: 0;
+  position: relative;
   display: flex;
 }
 
 main {
-  background-color:  #0edf0e
+  background-color:  #a8aeb1;
 }
 
 .container {
@@ -103,7 +95,7 @@ main {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #1b3891;
 }
 
 .active {
@@ -112,4 +104,9 @@ main {
   color: #b3ffb3;
 
 
+}
+
+
+.navbar-header li a {
+  color : #1b3891;
 }

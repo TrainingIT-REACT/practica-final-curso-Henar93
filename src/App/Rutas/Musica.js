@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { getSongsByAlbum } from '../storeMusic/StoreMusic';
 import { getAlbumById } from '../storeMusic/StoreMusic';
-import Songs from "../StoreMusic/Songs";
+
 import Loader from '../Menu/Loader';
 
 
@@ -17,6 +17,13 @@ class Album extends React.Component{
     render(){
          let songs=this.props.albums.songs;
         let album=this.props.albums.album;
+        // let items = this.props.data.map( album, i ) ;
+        //     <link to={"/album/"+album.id} classsName="album" key={album.id}>
+        //         <div ClasssName="img">
+        //             <img src={album.cover} alt="Imagen del album" title="im"/>
+        //         </div>
+        //         <div className="title">{album.name}</div>
+        //     </link>;
       
 
         if (this.props.albums.isLoading) {
@@ -35,7 +42,7 @@ class Album extends React.Component{
                          <div className="songs">Nº canciones: {songs.lenkgth}</div> 
                     </div>
                 </div>
-                 <Songs data={songs} album={album.name}/>
+                 {/* <Songs data={songs} album={album.name}/> */}
             </div>
         } else{
             return <Loader />

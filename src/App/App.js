@@ -75,7 +75,7 @@ class App extends Component {
       <Suspense fallback={<Loader />}>
       <Router>
         <div className="App"> 
-          <h1>Henarfy</h1>
+         
             <Navbar/>        
             <div className="container">    
                 <h2 >Top éxitos</h2>

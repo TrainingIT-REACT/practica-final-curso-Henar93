@@ -1,7 +1,8 @@
 // Definimos la lista de acciones
 const actions = [
     // Usuarios
-    "UPDATE_NAME"
+    "UPDATE_NAME",
+    "ADD_TO_HISTORY"
   ];
   
   // Las convertimos en un objeto
