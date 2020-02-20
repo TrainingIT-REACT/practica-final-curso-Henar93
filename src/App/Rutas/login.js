@@ -5,6 +5,10 @@ import {Link} from "react-router-dom";
 // Contexto de usuario
 import UserContext from '../Context/user';
 import { Provider } from "react-redux";
+
+import { Redirect } from 'react-router-dom'; 
+ 
+
 //Css
 
 import './login.css';
@@ -38,24 +42,32 @@ const Login = ({ location }) => {
     {({ signedIn, updateUser }) => {
       return <div>
         { signedIn ? (
-          <p>Ya puedes ir al panel de administración! 👆</p>
-        ) : (
+                        <Redirect
+                        to={{
+                          pathname: '/about',
+                          state: {
+                            message: 'Por favor, haz login primero'
+                          }
+                        }}></Redirect>
+        )
+         : 
+        (
           <>
-            Introduce tu nombre en la URL.
-             <Link to="/inicio_sesion/cris">/inicio_sesion/cris</Link>
+
+
             <button onClick={() => updateUser(true)}>Login</button>
             { (location.state && location.state.message) &&
               <p>
                 { location.state.message }
               </p>
+              
             }
           </>
         )}
         <Provider store={store}>
             <div className="App container">        
-            <UpdateName />
-          
-        </div>
+            <UpdateName />   
+           </div>
         </Provider>
       </div>
     }}

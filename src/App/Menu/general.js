@@ -6,6 +6,7 @@ import Musica from '../Rutas/Musica';
 import About from '../Rutas/About';
 import Login from '../Rutas/login';
 import Home from '../Rutas/Home';
+import Perfil from '../Rutas/Perfil';
 import UserContext from '../Context/user';
 
 
@@ -59,14 +60,14 @@ class Navbar extends React.Component {
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <ul>
-                            <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none" /></svg></NavLink></li>
+                            <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/home" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none" /></svg></NavLink></li>
   <li> 
                                     <div class="dropdown">
                                         <button class="dropbtn"><UpName/></button>
                                         <div class="dropdown-content">
 
                                             <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/inicio_sesion" >Inicio sesion</NavLink>
-                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/musica" >Perfil</NavLink>
+                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/Perfil" >Perfil</NavLink>
                                             <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/musica" >Música</NavLink>
                                             <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/Cerrar" >Cerrar</NavLink>
                                         </div>
@@ -88,8 +89,9 @@ class Navbar extends React.Component {
                 <PrivateRoute path="/musica" exact component={Musica} />  
                 <Route path="/inicio_sesion" exact component={Login} /> 
                 <Route path="/about" exact component={About} />
-                <Route path="/" exact component={Home} /> 
+                <Route path="/home" exact component={Home} /> 
                 <Route path="/cerrar" exact component={cerrar} /> 
+                <PrivateRoute path="/perfil" exact component={Perfil} /> 
                 </Provider>
                 </UserContext.Provider>
             </Router>

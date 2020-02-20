@@ -1,12 +1,32 @@
 import React from "react";
+import Glossary from '../Glossary';
 
+
+
+
+
+
+
+// List de términos para el glosario
+const terms = [
+  {
+    term: "C1",
+    definition: "a"
+  },
+  {
+    term: "C2",
+    definition: "b"
+  }
+];
 class Home extends React.Component{
     render(){
         return <div>
-                    <p>Esta es tu home  </p>
-                    <hr></hr>  
-            
-                   
+                
+                <h2>Top exitos</h2>
+                    <ul>
+                
+                     <Glossary terms={terms} />
+                </ul>
              </div>
     }
 }
