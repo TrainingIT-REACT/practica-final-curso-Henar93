@@ -6,11 +6,11 @@ export const getAlbums = createAsyncAction('ALBUMS', async () => {
 });
 
 export const getAlbumById = createAsyncAction('ALBUM', async (id) => {
-    const res = await fetch('http://localhost:3001/albums/'+5);
+    const res = await fetch('http://localhost:3001/albums/'+id);
     return await res.json();
 });
 
 export const getSongsByAlbum = createAsyncAction('SONGS', async (id) => {
-    const res = await fetch('http://localhost:3001/songs'+5);
+    const res = await fetch('http://localhost:3001/songs/'+id);
     return await res.json();
 });

@@ -9,10 +9,11 @@ import Loader from '../Menu/Loader';
 
 
 class Album extends React.Component{
-    componentDidMount() {
-        this.props.getAlbumById(this.props.match.params.id);
-        this.props.getSongsByAlbum(this.props.match.params.id);
-    }
+     componentDidMount() {
+         this.props.getAlbumById(this.props);
+         this.props.getSongsByAlbum(this.props);
+    
+     }
 
     render(){
          let songs=this.props.albums.songs;

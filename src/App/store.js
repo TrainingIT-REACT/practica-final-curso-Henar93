@@ -1,4 +1,4 @@
-import { createStore,combineReducers,applyMiddleware } from "redux";
+import { createStore,combineReducers,applyMiddleware ,compose} from "redux";
 import promise from "redux-promise-middleware";
 
 // Reducers
@@ -9,16 +9,20 @@ import albums  from  "./storeMusic/albumsReducer";
 // Middlewares
 import logger from './middlewares/logger';
 
-export default createStore(
-  combineReducers({
-    user,
-    albums
-  }),
 
- 
-  applyMiddleware(logger, promise)
+//Combinación de middleware
+
+const store = createStore(
+    combineReducers({
+    user,
+     albums
+   }),
+
+
+  compose(applyMiddleware(logger),applyMiddleware(promise))
 
 
 );
 
 
+export default store;

@@ -55,30 +55,37 @@ class Navbar extends React.Component {
         return (
             <Router>
                  <UserContext.Provider value={this.state}>
-                     <Provider store={store}>
+                 <Provider store={store}>  
                 <nav className="navbar navbar-inverse" >
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <ul>
-                            <li><NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/home" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none" /></svg></NavLink></li>
-  <li> 
-                                    <div class="dropdown">
-                                        <button class="dropbtn"><UpName/></button>
-                                        <div class="dropdown-content">
+                                <li>
+                                    <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/home" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none" /></svg></NavLink>
+                                </li>
+                                <li> 
+                                    <div className="dropdown">
+                                    
+                                        <button className="dropbtn">
+                                                <UpName/>
+                                        </button>
+                                        
+                                            <div className="dropdown-content">
 
-                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/inicio_sesion" >Inicio sesion</NavLink>
-                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/Perfil" >Perfil</NavLink>
-                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/musica" >Música</NavLink>
-                                            <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/Cerrar" >Cerrar</NavLink>
-                                        </div>
+                                                    <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/inicio_sesion" >Inicio sesion</NavLink>
+                                                    <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/Perfil" >Perfil</NavLink>
+                                                    <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/musica" >Música</NavLink>
+                                                    <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/Cerrar" >Cerrar</NavLink>
+                                            </div>
    
                                     </div>
   
                                 </li>
-<li>                                  <div class="minombre">
+                                <li>                                  
+                                    <div className="minombre">
                                         <h2>Henarfy</h2>
                                     </div>
-                                    </li>
+                               </li>
                             </ul>
                         </div>
                         
@@ -100,7 +107,7 @@ class Navbar extends React.Component {
 };
 //Navbar = withRouter(Navbar);  
 
-
+const mapStateToProps = (state) => ({ ...state }); 
 export default Navbar;
 
 
