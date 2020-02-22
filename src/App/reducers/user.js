@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
       return {
         name: action.name
       };
-    default:
+    default: 
       return state;
   }
 }

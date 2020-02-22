@@ -110,3 +110,7 @@ main {
 .navbar-header li a {
   color : #1b3891;
 }
+
+.cover {
+  width: 200px;
+}

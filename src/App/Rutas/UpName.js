@@ -13,7 +13,7 @@ const UpName = ( {name}) => {
 
 const mapStateToProps = (state/*, otherProps */) => {
   return {
-    name: state.name
+    name: state.user.name
   }
 }
 

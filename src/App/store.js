@@ -13,15 +13,13 @@ import logger from './middlewares/logger';
 //Combinación de middleware
 
 const store = createStore(
-    combineReducers({
+  combineReducers({
     user,
-     albums
-   }),
-
-
-  compose(applyMiddleware(logger),applyMiddleware(promise))
-
-
+    albums
+  }),
+  compose(
+    applyMiddleware(logger)
+   ,applyMiddleware(promise))
 );
 
 
