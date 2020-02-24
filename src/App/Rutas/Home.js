@@ -1,6 +1,6 @@
 import React from "react";
 import Glossary from '../Glossary';
-
+import { NavLink } from "react-router-dom";
 
 
 
@@ -10,12 +10,16 @@ import Glossary from '../Glossary';
 // List de términos para el glosario
 const terms = [
   {
-    term: "C1",
-    definition: "a"
+    term: "Chip off the old bloc",
+    definition: "Blair"
   },
   {
-    term: "C2",
-    definition: "b"
+    term: "Decisions decisions",
+    definition: "Skylar"
+  },
+  {
+    term: "Ice cold",
+    definition: "Kimberley"
   }
 ];
 class Home extends React.Component{
@@ -27,6 +31,8 @@ class Home extends React.Component{
                 
                      <Glossary terms={terms} />
                 </ul>
+                <h3> Ya puedes descubir las últimas novedades</h3>
+                <button> <NavLink  to="/inicio_sesion" >Inicio sesion</NavLink></button>
              </div>
     }
 }
