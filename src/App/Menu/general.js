@@ -7,6 +7,7 @@ import About from '../Rutas/About';
 import Login from '../Rutas/login';
 import Home from '../Rutas/Home';
 import Perfil from '../Rutas/Perfil';
+import Cerrar from '../Rutas/Cerrar';
 import UserContext from '../Context/user';
 
 
@@ -96,8 +97,9 @@ class Navbar extends React.Component {
                 <PrivateRoute path="/musica" exact component={Musica} />  
                 <Route path="/inicio_sesion" exact component={Login} /> 
                 <Route path="/about" exact component={About} />
+                
                 <Route path="/home" exact component={Home} /> 
-                <Route path="/cerrar" exact component={cerrar} /> 
+                <Route path="/cerrar" exact component={Cerrar} /> 
                 <PrivateRoute path="/perfil" exact component={Perfil} /> 
                 </Provider>
                 </UserContext.Provider>

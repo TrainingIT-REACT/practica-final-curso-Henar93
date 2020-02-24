@@ -2,6 +2,7 @@
 const actions = [
     // Usuarios
     "UPDATE_NAME",
+    "LOGOUT",
   
   ];
   

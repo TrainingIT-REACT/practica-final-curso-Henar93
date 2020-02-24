@@ -23,7 +23,7 @@ class Album extends React.Component{
             return <Loader />
         } else if (this.props.albums.error) {
             return <p>Error al obtener los datos</p>
-        }else if(this.props.albums != undefined){
+        }else if(this.props.albums !== undefined){
             // const Aaa = ({ albums }) => {
                 return <ul>
                     { this.props.albums.albums.map((album) => (
