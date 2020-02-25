@@ -1,41 +1,20 @@
-
-
 import React from 'react';
-import {Link} from "react-router-dom";
+
 // Contexto de usuario
 import UserContext from '../Context/user';
 import { Provider } from "react-redux";
-
 import { Redirect } from 'react-router-dom'; 
  
-
 //Css
 
 import './login.css';
 // Este componente utiliza el parámetro para mostrarlo en la interfaz
 
-
-
-
-
-
-
 // Store
 import store from '../store';
 
-
-
-
-
 // Componentes
 import UpdateName from '../UpdateName';
-
-
-
-
-
-
-
 const Login = ({ location }) => {
   return <UserContext.Consumer>
     
@@ -71,9 +50,6 @@ const Login = ({ location }) => {
         </Provider>
       </div>
     }}
- 
   </UserContext.Consumer>;
 }
-
-
 export default  Login;
