@@ -7,7 +7,7 @@ export const updateName = (name) => ({
 
 
 
-export const addSongToHistory = (song) => ({
-  type: types.ADD_TO_HISTORY,
-  song
+export const updateApellido = (apellido) => ({
+  type: types.UPDATE_APELLIDOS,
+  apellido
 });

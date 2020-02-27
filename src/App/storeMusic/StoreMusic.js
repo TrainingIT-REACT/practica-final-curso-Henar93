@@ -19,3 +19,9 @@ export const getTopAlbums = createAsyncAction('ALBUMS', async () => {
     return await res.json();
 });
 
+export const getSongRep = createAsyncAction('SONGS', async (id) => {
+    const res = await fetch('http://localhost:3001/SONGS/'+id);
+    return await res.json();
+});
+
+

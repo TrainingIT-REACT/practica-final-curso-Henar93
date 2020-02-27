@@ -13,11 +13,22 @@ const UpdateName = ({ updateName }) => {
     input.current.value = '';
   }
 
-  return <form onSubmit={onSubmit}>
-    <label htmlFor="name">¿Cuál es tu nombre?</label>
-    <input id="name" type="text" ref={input} placeholder="Angel, Tana, Raquel,..."    width="48" padding="48"/> 
-    <button>Actualizar nombre</button>
+  return (
+  <div><div>
+    <form onSubmit={onSubmit}>
+    <label htmlFor="name">Usuario</label>
+    <input id="name" type="text" ref={input} placeholder="Angel, Tana, Raquel,..."  /> 
+    <button>Login</button>
+
+   
+    
   </form>
+  </div>
+  <div>
+      <label htmlFor="name">Contraseña</label>
+      <input type="password" id="pwd" name="pwd" minlength="8"></input><br></br>
+      
+      </div></div>)
 }
 
 const mapDispatchToProps = (dispatch) => ({

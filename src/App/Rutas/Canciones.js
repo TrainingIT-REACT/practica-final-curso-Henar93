@@ -32,7 +32,8 @@ class Canciones extends React.Component {
                     <ul>
                         { songs.map((song) => (
                         <li key={song.id}>
-                            {song.name}{' ['+ song.seconds + 's ]'}
+                            <NavLink activeClassName="active" to={"/rep/"+song.id} >{song.name}</NavLink>
+                            {' ['+ song.seconds + 's ]'}
                         </li>
                         ))}
                     </ul>
