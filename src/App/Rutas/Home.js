@@ -2,9 +2,12 @@ import React from "react";
 import Glossary from '../Glossary';
 import Login from './login';
 import {  BrowserRouter as Router, NavLink, Route } from "react-router-dom";
+import { connect } from "react-redux";
 import Musica from './Musica';
 import UserContext from '../Context/user';
 import {Provider} from "react-redux";
+import {getTopAlbums}  from '../storeMusic/StoreMusic';
+import Loader from '../Menu/Loader';
 
 
 // Store
@@ -14,44 +17,59 @@ import store from '../store';
 // Componente para definir rutas privadas
 import PrivateRoute from '../Context/PrivateRoute';
 
-// List de términos para el glosario
-const terms = [
-  {
-    term: "Chip off the old bloc",
-    definition: "Blair"
-  },
-  {
-    term: "Decisions decisions",
-    definition: "Skylar"
-  },
-  {
-    term: "Ice cold",
-    definition: "Kimberley"
-  }
-];
+
 class Home extends React.Component{
+  componentDidMount() {
+    this.props.getTopAlbums();
+    console.log("Mira aqui");
+    console.log(this.props.albums);
+  }
     render(){
+      console.log(this.props);
+      if (this.props.albums.isLoading) {
+          return <Loader />
+      } else if (this.props.albums.error) {
+          return <p>Error al obtener los datos</p>
+      }else if(this.props.albums !== undefined){
+        
+        console.log(this.props.albums);
         return (
-          // <Router>
-          //  {/* <UserContext.Provider value={this.state}> */}
-          //     <Provider store={store}>
-                <div> 
-                  <h2>Top exitos</h2>
-                  <ul>
-                    <Glossary terms={terms} />
-                  </ul>
-                  <h3> Ya puedes descubir las últimas novedades</h3>
-                  {/* <button>  */}
+          <div>
+            <div><h1>Top exitos</h1></div>
+          <div>
+          <ul>
+             { this.props.albums.albums.map((album) => (
+              <li key={album.id}>
+                  {'Nombre: ' + album.name}{'Id: '+ album.id}
+                  <img className="cover" src={album.cover}/> 
+              </li>
+                        ))}
+          </ul>
+          </div>
+          <div>
+
+                    <hr></hr>
+                    
+                    <h3> Ya puedes descubir las últimas novedades</h3>
                     <NavLink  to="/musica" >Música</NavLink>
-                  {/* </button> */}
-                 </div>
-              //    <PrivateRoute path="/musica" exact component={Musica} />
-              //    <Route path="/inicio_sesion" exact component={Login} />
-              // </Provider>
-            /* </UserContext.Provider> */
-          // </Router>
+                 
+
+            </div>
+            </div>
+            
           )
-        }
+        }else{
+          return <Loader />
+      }
+      }
 };
-//const mapStateToProps = (state) => ({ ...state });
-export default Home;
+const mapStateToProps = (state) => ({ ...state });
+
+const mapDispatchToProps = (dispatch) => ({
+  getTopAlbums: () => dispatch(getTopAlbums())
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(Home);

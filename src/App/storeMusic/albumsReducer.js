@@ -5,10 +5,13 @@ import { getSongsByAlbum } from "./StoreMusic";
 const initialState = {
     isLoading: false,
     error: false,
-    albums: []
+    albums: [], 
+    album: null,
+    songs: []
 }
 
 const reducer = (state = initialState, action) => {
+    console.log(action.type);
     switch(action.type){
         case String(getAlbums.pending) || String(getAlbumById.pending) || String(getSongsByAlbum.pending) : 
         return {

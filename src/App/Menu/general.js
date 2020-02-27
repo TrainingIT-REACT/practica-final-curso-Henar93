@@ -9,6 +9,7 @@ import Home from '../Rutas/Home';
 import Perfil from '../Rutas/Perfil';
 import Cerrar from '../Rutas/Cerrar';
 import UserContext from '../Context/user';
+import Canciones from '../Rutas/Canciones';
 
 
 
@@ -101,6 +102,7 @@ class Navbar extends React.Component {
                 <Route path="/home" exact component={Home} /> 
                 <Route path="/cerrar" exact component={Cerrar} /> 
                 <PrivateRoute path="/perfil" exact component={Perfil} /> 
+                <PrivateRoute path={"/canciones/:id"} component={Canciones} exact/> 
                 </Provider>
                 </UserContext.Provider>
             </Router>
