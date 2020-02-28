@@ -2,40 +2,36 @@ import React, { createRef } from 'react';
 import { connect } from 'react-redux';
 
 // Acciones
-import { updateName } from './actions/user';
+import { updateApellido } from '../actions/user';
 
-const UpdateName = ({ updateName }) => {
+const  UpdateApellido  = ({  updateApellido  }) => {
   const input = createRef();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    updateName(input.current.value);
+    updateApellido (input.current.value);
     input.current.value = '';
   }
 
   return (
-  <div><div>
-    <form onSubmit={onSubmit}>
-    <label htmlFor="name">Usuario</label>
-    <input id="name" type="text" ref={input} placeholder="Angel, Tana, Raquel,..."  /> 
-    <button>Login</button>
-
-   
-    
-  </form>
-  </div>
   <div>
-      <label htmlFor="name">Contraseña</label>
-      <input type="password" id="pwd" name="pwd" minLength="8"></input><br></br>
-      
-      </div></div>)
+    <form onSubmit={onSubmit}>
+    <label htmlFor="name">Nombre</label>
+    <input id="name" type="text" ref={input} placeholder="Angel, Tana, Raquel,..."  /> 
+    <button>Añadir</button>   
+  </form>
+ 
+</div>)
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  updateName: (name) => dispatch(updateName(name)),
+    updateApellido : (apellido) => dispatch(updateApellido (apellido)),
+
 });
+
+
 
 export default connect(
   () => ({}),
   mapDispatchToProps,
-)(UpdateName);
+)( UpdateApellido );

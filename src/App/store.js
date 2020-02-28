@@ -5,6 +5,7 @@ import promise from "redux-promise-middleware";
 
 import user from './reducers/user';
 import albums  from  "./storeMusic/albumsReducer";
+import perfil from './reducers/perfil';
 
 // Middlewares
 import logger from './middlewares/logger';
@@ -15,7 +16,8 @@ import logger from './middlewares/logger';
 const store = createStore(
   combineReducers({
     user,
-    albums
+    albums, 
+    perfil
   }),
   compose(
     applyMiddleware(logger)
