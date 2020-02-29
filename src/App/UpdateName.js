@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // Acciones
 import { updateName } from './actions/user';
 
+
 const UpdateName = ({ updateName }) => {
   const input = createRef();
 

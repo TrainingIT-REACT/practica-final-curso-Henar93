@@ -3,18 +3,26 @@ import { connect } from 'react-redux';
 
 
 
+
 const UpApellido = ( {apellido}) => {
   return <section>
-    <label>Datos Usuario</label>
-    <label>{ apellido != null && apellido !== '' ? (apellido) : ' escribete leñe' }</label>
+    <label>{ 'Apellidos : ' + apellido }</label>
     
   </section>;
 }
- 
+
+const UpTelefono = ( {telefono}) => {
+  return <section>
+    <label>{ 'Telefono : ' + telefono }</label>
+    
+  </section>;
+}
+
+
 const mapStateToProps = (state/*, otherProps */) => {
   return {
-    apellido: state.user.apellido
- 
+    apellido: state.perfil.apellido,
+    telefono: state.perfil.telefono
   }
 }
 
@@ -22,4 +30,4 @@ const mapStateToProps = (state/*, otherProps */) => {
 
 export default connect(
   mapStateToProps
-)(UpApellido);
+)(UpApellido, UpTelefono);

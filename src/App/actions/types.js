@@ -3,7 +3,10 @@ const actions = [
     // Usuarios
     "UPDATE_NAME",
     "LOGOUT",
-    "UPDATE_APELLIDOS",
+    "UPDATE_APELLIDO",
+    "UPDATE_EMAIL",
+    "UPDATE_TELEFONO",
+    "UPDATE_EDAD",
   
   ];
   

@@ -8,6 +8,22 @@ export const updateName = (name) => ({
 
 
 export const updateApellido = (apellido) => ({
-  type: types.UPDATE_APELLIDOS,
+  type: types.UPDATE_APELLIDO,
   apellido
 });
+
+export const updatEmail = (email) => ({
+  type: types.UPDATE_EMAIL,
+  email
+});
+
+export const updateTelefono = (telefono) => ({
+  type: types.UPDATE_TELEFONO,
+  telefono
+});
+
+export const updateEdad= (edad) => ({
+  type: types.UPDATE_EDAD,
+  edad
+});
+

@@ -4,6 +4,7 @@ import PerfilUser from '../PerfilUsuario/PerfilUser';
 import {Provider} from "react-redux";
 import UpPerfil from '../PerfilUsuario/UpPerfil';
 import store from '../store';
+import Login from "../PerfilUsuario/PerfilUser";
 class Perfil extends React.Component{
     constructor(props) {
         super(props);
@@ -23,16 +24,16 @@ class Perfil extends React.Component{
       }
     render(){
         return <div>
-            <UserContext.Provider value={this.state}>
-                 <Provider store={store}>  
+            {/* <UserContext.Provider value={this.state}> */}
+                 {/* <Provider store={store}>   */}
                    <h1> Perfil del usuario</h1>
                     <hr></hr>  
-                    <PerfilUser/>
+                    <p><Login/></p>
                
                     <hr></hr>  
                     <UpPerfil/>
-                    </Provider>
-                </UserContext.Provider>
+                    {/* </Provider> */}
+                {/* </UserContext.Provider> */}
              </div>
     }
 }

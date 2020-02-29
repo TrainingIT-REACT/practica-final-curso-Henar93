@@ -1,11 +1,12 @@
 import React from 'react';
 
 // Contexto de usuario
-import UpdatePerfil from './UpdatePerfil';
 import UserContext from '../Context/user';
 import { Provider } from "react-redux";
 import { Redirect } from 'react-router-dom'; 
- 
+import { connect } from 'react-redux';
+//Css
+
 
 // Este componente utiliza el parámetro para mostrarlo en la interfaz
 
@@ -13,40 +14,34 @@ import { Redirect } from 'react-router-dom';
 import store from '../store';
 
 // Componentes
-import UpdateName from '../UpdateName';
-import { updateApellido } from '../actions/user';
+import UpdateApellido from './UpdatePerfil';
+import UpdateTelefono from './UpdatePerfil';
+const Apellido = () => {
+return(        <Provider store={store}>
+    <div className="App container">        
+    <UpdateApellido />   
+   
+   </div>
+</Provider>
+)
 
 
-const  PerfilUser =()=>{
-    return( <UserContext.Consumer> 
-                    
-              
-                  
-        <Provider store={store}>
+
+;
+}
+
+
+const Telefono =() => {
+    return(        <Provider store={store}>
         <div className="App container">        
-        <UpdatePerfil />   
+        <UpdateTelefono />   
+       
        </div>
     </Provider>
-   
-    </UserContext.Consumer>    )
-
-
+    )
     
-}
- 
-       
     
-
-; 
-// return (
-//   <Provider store={store}>
-//   <div className="App container">        
-//   <UpdatePerfil/>   
-//  </div>
-// </Provider>
-
-// )
-
-  
-
- export default  PerfilUser;
+    
+    ;
+    }
+export default  (Apellido, Telefono);
