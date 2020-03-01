@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import { getSongRep } from '../storeMusic/StoreMusic';
-import { getAlbumById } from '../storeMusic/StoreMusic';
-
+i
 import Loader from '../Menu/Loader';
 
 class Reproductor extends React.Component {
@@ -14,20 +13,19 @@ class Reproductor extends React.Component {
 
     render(){
         console.log('a');        
-        console.log(this.props.albums.songs);
+        console.log(this.props.albums.song);
         if (this.props.albums.isLoading) {
             return <Loader />
         } else if (this.props.albums.error) {
             return <p>Error al obtener los datos</p>   
-        } else if(this.props.albums.album !== undefined && this.props.albums.album != null
-            && this.props.albums.songs !== undefined) {   
-            let songs = this.props.albums.songs;
+        } else if(this.props.albums.song !== undefined && this.props.albums.song !== null) {   
+            let song = this.props.albums.song;
             return(
                 <div>
-                    {songs.name}
+                    {song.name}
                     <hr></hr>
                     <audio controls>
-                    <source src="/music/funky_energy_loop.mp3" type="audio/mpeg"></source>
+                    <source src={song.audio} type="audio/mpeg"></source>
                     </audio> 
  
                   
