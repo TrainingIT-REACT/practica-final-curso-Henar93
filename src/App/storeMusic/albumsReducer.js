@@ -1,19 +1,20 @@
-import { getAlbums } from "./StoreMusic";
-import { getAlbumById } from "./StoreMusic";
-import { getSongsByAlbum } from "./StoreMusic";
+import { getAlbums, getAlbumById ,getSongsByAlbum , getTopAlbums, getSongRep } from "./StoreMusic";
+
 
 const initialState = {
     isLoading: false,
     error: false,
     albums: [], 
     album: null,
-    songs: []
+    songs: [],
+    song: null
 }
 
 const reducer = (state = initialState, action) => {
     console.log(action.type);
     switch(action.type){
-        case String(getAlbums.pending) || String(getAlbumById.pending) || String(getSongsByAlbum.pending) : 
+        case String(getAlbums.pending) || String(getAlbumById.pending) || String(getSongsByAlbum.pending) || 
+        String(getTopAlbums.pending) || String(getSongRep.pending) : 
         return {
             ...state,
             isLoading: true,
@@ -26,6 +27,13 @@ const reducer = (state = initialState, action) => {
             error: false,
             albums: action.payload
         };
+        case String(getTopAlbums.fulfilled): 
+        return {
+            ...state,
+            isLoading: false,
+            error: false,
+            albums: action.payload
+        };        
         case String(getAlbumById.fulfilled): 
         return {
             ...state,
@@ -40,12 +48,21 @@ const reducer = (state = initialState, action) => {
             error: false,
             songs: action.payload
         };
-        case String(getAlbums.rejected) || String(getAlbumById.rejected) || String(getSongsByAlbum.rejected) : 
+        case String(getSongRep.fulfilled): 
+        return {
+            ...state,
+            isLoading: false,
+            error: false,
+            song: action.payload
+        };
+        case String(getAlbums.rejected) || String(getAlbumById.rejected) || String(getSongsByAlbum.rejected) || 
+        String(getTopAlbums.rejected) || String(getSongRep.rejected) :
         return {
             ...state,
             isLoading: false,
             error: true
         };
+        
         default: return state;
     }
 }

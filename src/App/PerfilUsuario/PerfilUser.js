@@ -14,12 +14,12 @@ import { connect } from 'react-redux';
 import store from '../store';
 
 // Componentes
-import UpdateApellido from './UpdatePerfil';
-import UpdateTelefono from './UpdatePerfil';
-const Apellido = () => {
+import UpdatePerfil from './UpdatePerfil';
+
+const Perfil = () => {
 return(        <Provider store={store}>
     <div className="App container">        
-    <UpdateApellido />   
+    <UpdatePerfil />   
    
    </div>
 </Provider>
@@ -31,17 +31,5 @@ return(        <Provider store={store}>
 }
 
 
-const Telefono =() => {
-    return(        <Provider store={store}>
-        <div className="App container">        
-        <UpdateTelefono />   
-       
-       </div>
-    </Provider>
-    )
-    
-    
-    
-    ;
-    }
-export default  (Apellido, Telefono);
+
+export default  (Perfil);

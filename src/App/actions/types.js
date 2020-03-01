@@ -1,8 +1,9 @@
 // Definimos la lista de acciones
 const actions = [
     // Usuarios
-    "UPDATE_NAME",
+    "UPDATE_NAME", //nombre login
     "LOGOUT",
+    "UPDATE_NOMBRE",//nombre real del usuario
     "UPDATE_APELLIDO",
     "UPDATE_EMAIL",
     "UPDATE_TELEFONO",

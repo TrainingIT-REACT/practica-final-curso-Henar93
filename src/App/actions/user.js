@@ -5,6 +5,11 @@ export const updateName = (name) => ({
   name
 });
 
+export const updateNombre= (nombre) => ({
+  type: types.UPDATE_NOMBRE,
+  nombre
+});
+
 
 
 export const updateApellido = (apellido) => ({
@@ -12,7 +17,7 @@ export const updateApellido = (apellido) => ({
   apellido
 });
 
-export const updatEmail = (email) => ({
+export const updateEmail = (email) => ({
   type: types.UPDATE_EMAIL,
   email
 });

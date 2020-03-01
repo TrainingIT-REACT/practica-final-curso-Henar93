@@ -5,6 +5,7 @@ import {Provider} from "react-redux";
 import UpPerfil from '../PerfilUsuario/UpPerfil';
 import store from '../store';
 import Login from "../PerfilUsuario/PerfilUser";
+import UpdatePerfil from "../PerfilUsuario/UpdatePerfil";
 class Perfil extends React.Component{
     constructor(props) {
         super(props);
@@ -15,11 +16,13 @@ class Perfil extends React.Component{
         this.state = {
           
             updateApellido: this.updateApellido,
+            updateTelefono:this.updateTelefono,
         }
     }
             updateApellido(apellido) {
-                this.setState(() => ({ apellido }));
-           
+                this.setState(() => ({ apellido }))}
+            updateTelefono(telefono) {
+                    this.setState(() => ({ telefono }));   
          
       }
     render(){
@@ -28,7 +31,7 @@ class Perfil extends React.Component{
                  {/* <Provider store={store}>   */}
                    <h1> Perfil del usuario</h1>
                     <hr></hr>  
-                    <p><Login/></p>
+                    <p><UpdatePerfil/></p>
                
                     <hr></hr>  
                     <UpPerfil/>

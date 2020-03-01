@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import { getSongRep } from '../storeMusic/StoreMusic';
-i
 import Loader from '../Menu/Loader';
 
 class Reproductor extends React.Component {
