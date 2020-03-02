@@ -35,9 +35,17 @@ export const updateEdad= (edad) => ({
 });
 
 
-export const addSongToHistory = (song) => ({
+export const addSongToHistory = (id) => ({
   type: types.ADD_TO_HISTORY,
-  song
+  id
+});
+
+
+
+
+export const addAlbumToHistory = (id) => ({
+  type: types.ALBUM_TO_HISTORY,
+  id
 });
 
 

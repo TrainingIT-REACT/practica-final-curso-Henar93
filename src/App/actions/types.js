@@ -8,7 +8,8 @@ const actions = [
     "UPDATE_EMAIL",
     "UPDATE_TELEFONO",
     "UPDATE_EDAD",
-    "ADD_TO_HISTORY"
+    "ADD_TO_HISTORY",
+    "ALBUM_TO_HISTORY"
   
   ];
   
@@ -16,7 +17,8 @@ const actions = [
   const actionTypes = {};
   actions.forEach(action => {
     actionTypes[action] = action;
+
   });
-  
+
   export default actionTypes;
   

@@ -8,7 +8,7 @@ class Reproductor extends React.Component {
     componentDidMount() {
    
         this.props.getSongRep(this.props.match.params.id);
-     
+        this.props.addSongToHistory(this.props.match.params.id);
        
         console.log('a'); 
 
@@ -22,8 +22,9 @@ class Reproductor extends React.Component {
             return <p>Error al obtener los datos</p>   
         } else if(this.props.albums.song !== undefined && this.props.albums.song !== null) {   
             let song = this.props.albums.song;
+
             console.log(song)
-            this.props.addSongToHistory(song);
+
             return(
                 <div>
                     {song.name}
@@ -45,7 +46,7 @@ const mapStateToProps = (state) => ({ ...state });
 
 const mapDispatchToProps = (dispatch) => ({
     getSongRep: (id) => dispatch(getSongRep(id)),
-    addSongToHistory: (song) => dispatch(addSongToHistory(song))
+    addSongToHistory: (id) => dispatch(addSongToHistory(id))
 });
 
 export default connect(

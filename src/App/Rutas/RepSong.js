@@ -12,7 +12,7 @@ const RepSong = ( {history}) => {
 
 const mapStateToProps = (state/*, otherProps */) => {
   return {
-    history: state.user.history
+    id: state.user.id
   }
 }
 

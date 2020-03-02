@@ -7,11 +7,13 @@ import { getSongsByAlbum, getAlbums } from '../storeMusic/StoreMusic';
 import { getAlbumById } from '../storeMusic/StoreMusic';
 
 import Loader from '../Menu/Loader';
-
+import { addAlbumToHistory } from '../actions/user';
 class Canciones extends React.Component {
     componentDidMount() {
         this.props.getAlbumById(this.props.match.params.id);
         this.props.getSongsByAlbum(this.props.match.params.id);
+        this.props. addAlbumToHistory(this.props.match.params.id);
+
     }
 
     render(){
@@ -51,7 +53,8 @@ const mapStateToProps = (state) => ({ ...state });
 
 const mapDispatchToProps = (dispatch) => ({
     getAlbumById: (id) => dispatch(getAlbumById(id)),
-    getSongsByAlbum: (id) => dispatch(getSongsByAlbum(id))
+    getSongsByAlbum: (id) => dispatch(getSongsByAlbum(id)),
+    addAlbumToHistory: (id) => dispatch(addAlbumToHistory(id))
 });
 
 export default connect(
