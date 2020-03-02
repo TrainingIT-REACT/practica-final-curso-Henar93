@@ -4,8 +4,8 @@ import types from '../actions/types';
 // Estado inicial
 const initialState = {
   name: "",
-  id_canciones_escuchadas:[],
-  id_albumes_buscados:[]
+  id_cancion_escuchada:[],
+  id_album_buscado:[]
 }
 
 // Implementamos el reducer
@@ -16,19 +16,19 @@ const reducer = (state = initialState, action) => {
     case types.UPDATE_NAME:
       return {
         name: action.name,
-        id_cancion:state
+        ...state
       };
 
-      case types.ADD_TO_HISTORY:
-        return {
-          
-          id_canciones_escuchadas:state.id_canciones_escuchadas.concat(action.id)
-        };
-        case types.ALBUM_TO_HISTORY:
-          return {
-            
-            id_albumes_buscados:state.id_albumes_buscados.concat(action.id)
-          };
+    case types.ADD_TO_HISTORY:
+      return {
+        ...state, 
+        id_cancion_escuchada:state.id_cancion_escuchada.concat(action.id)
+      };
+    case types.ALBUM_TO_HISTORY:
+      return {
+        ...state, 
+        id_album_buscado:state.id_album_buscado.concat(action.id)
+      };
     default:
         return state;
 }

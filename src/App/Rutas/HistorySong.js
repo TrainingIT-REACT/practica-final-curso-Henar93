@@ -8,7 +8,7 @@ class HistorySong extends React.Component{
         return <div id="history">
             <h2>Canciones escuchadas</h2>
             <div className="songs">
-                <RepSong/>
+                <p><RepSong/></p>
             </div>
         </div>
     }
