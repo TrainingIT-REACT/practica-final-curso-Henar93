@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 
 // Contexto de usuario
 import UserContext from '../Context/user';
@@ -15,6 +15,7 @@ import store from '../store';
 
 // Componentes
 import UpdateName from '../UpdateName';
+
 const Login = ({ location }) => {
   return <UserContext.Consumer>
     
@@ -34,6 +35,8 @@ const Login = ({ location }) => {
           <>
 
 
+
+            
             <button onClick={() => updateUser(true)}>Login</button>
             { (location.state && location.state.message) &&
               <p>

@@ -2,7 +2,8 @@ import types from '../actions/types';
 
 // Estado inicial
 const initialState = {
-  name: ""
+  name: "",
+  history:[]
 }
 
 // Implementamos el reducer
@@ -10,10 +11,15 @@ const reducer = (state = initialState, action) => {
   switch(action.type) {
     case types.UPDATE_NAME:
       return {
-        name: action.name
+        name: action.name,
+        history:state
       };
-    default: 
-      return state;
+      case types.ADD_TO_HISTORY:
+        return {
+        history:action.song
+      };
+    default:
+        return state;
   }
 }
 

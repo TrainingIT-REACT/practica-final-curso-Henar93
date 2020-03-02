@@ -8,6 +8,7 @@ const actions = [
     "UPDATE_EMAIL",
     "UPDATE_TELEFONO",
     "UPDATE_EDAD",
+    "ADD_TO_HISTORY"
   
   ];
   
