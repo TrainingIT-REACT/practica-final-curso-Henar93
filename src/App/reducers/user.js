@@ -15,8 +15,8 @@ const reducer = (state = initialState, action) => {
   switch(action.type) {
     case types.UPDATE_NAME:
       return {
-        name: action.name,
-        ...state
+        ...state,
+        name: action.name       
       };
 
     case types.ADD_TO_HISTORY:
@@ -27,7 +27,12 @@ const reducer = (state = initialState, action) => {
     case types.ALBUM_TO_HISTORY:
       return {
         ...state, 
-        id_album_buscado:state.id_album_buscado.concat(action.id)
+        id_album_buscado:state.id_album_buscado.concat(action.id)        
+      };
+    case types.LOGOUT:
+      return {
+        ...state,
+        name: ''
       };
     default:
         return state;

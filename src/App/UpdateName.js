@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // Acciones
 import { updateName } from './actions/user';
-
+import UserContext from './Context/user';
 
 const UpdateName = ({ updateName }) => {
   const input = createRef();
@@ -16,14 +16,14 @@ const UpdateName = ({ updateName }) => {
 
   return (
   <div><div>
-    <form onSubmit={onSubmit}>
+    <UserContext.Consumer>
+    {({ updateUser }) => {
+    return <form onSubmit={(e)=>{onSubmit(e);updateUser(true);}}>
     <label htmlFor="name">Usuario</label>
     <input id="name" type="text" ref={input} placeholder="Angel, Tana, Raquel,..."  /> 
-    <button>Login</button>
-
-   
-    
-  </form>
+    <button>Login</button>   
+  </form>}}
+  </UserContext.Consumer>
   </div>
   <div>
       <label htmlFor="name">Contraseña</label>

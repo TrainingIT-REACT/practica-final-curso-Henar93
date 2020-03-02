@@ -33,17 +33,6 @@ const Login = ({ location }) => {
          : 
         (
           <>
-
-
-
-            
-            <button onClick={() => updateUser(true)}>Login</button>
-            { (location.state && location.state.message) &&
-              <p>
-                { location.state.message }
-              </p>
-              
-            }
           </>
         )}
         <Provider store={store}>
