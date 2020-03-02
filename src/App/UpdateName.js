@@ -15,21 +15,23 @@ const UpdateName = ({ updateName }) => {
   }
 
   return (
-  <div><div>
+  <div>
     <UserContext.Consumer>
     {({ updateUser }) => {
     return <form onSubmit={(e)=>{onSubmit(e);updateUser(true);}}>
+      <div>
     <label htmlFor="name">Usuario</label>
-    <input id="name" type="text" ref={input} placeholder="Angel, Tana, Raquel,..."  /> 
+    <input id="name" type="text" required ref={input} placeholder="Angel, Tana, Raquel,..."  /> 
     <button>Login</button>   
-  </form>}}
-  </UserContext.Consumer>
   </div>
   <div>
       <label htmlFor="name">Contraseña</label>
-      <input type="password" id="pwd" name="pwd" minLength="8"></input><br></br>
+      <input type="password" id="pwd" required name="pwd" minLength="8"></input><br></br>
       
-      </div></div>)
+      </div>
+      </form>}}
+  </UserContext.Consumer>
+      </div>)
 }
 
 const mapDispatchToProps = (dispatch) => ({
