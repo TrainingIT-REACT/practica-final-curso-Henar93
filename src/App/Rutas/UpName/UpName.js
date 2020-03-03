@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const UpName = ( {name}) => {
   return <section>
-    <label>{ name != null && name !== '' ? ('Hola ' + name + ' !') : 'Regístrate' }</label>
+    <label id="sayHello">{ name != null && name !== '' ? ('Hola ' + name + ' !') : 'Regístrate' }</label>
     
   </section>;
 }

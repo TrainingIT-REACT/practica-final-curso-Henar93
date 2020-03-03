@@ -7,17 +7,13 @@ describe(UpName.WrappedComponent, () => {
     describe("Render", () => {
         let wrapper;
 
-        let user = {
-            "name": "Henar"
-        }
-
         beforeEach(() => {
-            wrapper = shallow(<UpName.WrappedComponent  name={user.name} />)
+            wrapper = shallow(<UpName.WrappedComponent />)
         });
         
         it('', () => {
             expect(wrapper.is('section')).toBeTruthy();
-            expect(wrapper.find('#sayHello').text()).toBe('Hola ' + user.name + ' !');
+            expect(wrapper.find('#sayHello').text()).toBe("Regístrate");
         });
 
 
