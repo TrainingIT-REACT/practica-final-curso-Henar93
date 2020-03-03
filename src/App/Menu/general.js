@@ -9,19 +9,14 @@ import Home from '../Rutas/Home';
 import Perfil from '../Rutas/Perfil';
 import Cerrar from '../Rutas/Cerrar';
 import UserContext from '../Context/user';
-import Canciones from '../Rutas/Canciones';
+import Canciones from '../Rutas/Canciones/Canciones';
 import Reproductor from '../Rutas/Reproductor';
-
-
-
 
 
 // Store
 import store from '../store';
-import UpName from '../Rutas/UpName';
+import UpName from '../Rutas/UpName/UpName';
 //const close =() =><p>chaO</p>; 
-
-
 
 // Componente para definir rutas privadas
 import PrivateRoute from '../Context/PrivateRoute';
@@ -105,7 +100,7 @@ class Navbar extends React.Component {
                 <PrivateRoute path="/musica" exact component={Musica} />  
                 <Route path="/inicio_sesion" exact component={Login} /> 
                 <Route path="/about" exact component={About} />
-                
+                <Route path="/history" exact component={History} /> 
                 <Route path="/home" exact component={Home} /> 
                 <Route path="/cerrar" exact component={Cerrar} /> 
                 <PrivateRoute path="/perfil" exact component={Perfil} />

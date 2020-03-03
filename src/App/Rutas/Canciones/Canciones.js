@@ -3,11 +3,11 @@ import {NavLink}  from "react-router-dom";
 
 import { connect } from "react-redux";
 
-import { getSongsByAlbum } from '../storeMusic/StoreMusic';
-import { getAlbumById } from '../storeMusic/StoreMusic';
+import { getSongsByAlbum } from '../../storeMusic/StoreMusic';
+import { getAlbumById } from '../../storeMusic/StoreMusic';
 
-import Loader from '../Menu/Loader';
-import { addAlbumToHistory } from '../actions/user';
+import Loader from '../../Menu/Loader';
+import { addAlbumToHistory } from '../../actions/user';
 
 let added = false ; 
 class Canciones extends React.Component {
