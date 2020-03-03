@@ -8,12 +8,14 @@ import { getAlbumById } from '../storeMusic/StoreMusic';
 
 import Loader from '../Menu/Loader';
 import { addAlbumToHistory } from '../actions/user';
+
+let added = false ; 
 class Canciones extends React.Component {
     componentDidMount() {
         this.props.getAlbumById(this.props.match.params.id);
         this.props.getSongsByAlbum(this.props.match.params.id);
-        this.props. addAlbumToHistory(this.props.match.params.id);
-
+        // this.props. addAlbumToHistory(this.props.match.params.id);
+        added=false;
     }
 
     render(){
@@ -27,6 +29,10 @@ class Canciones extends React.Component {
             && this.props.albums.songs !== undefined) {    
             let album = this.props.albums.album;
             let songs = this.props.albums.songs;
+            if(!added){
+                this.props.addAlbumToHistory(album);
+                added=true;
+            }
             return(
                 <div>
                     <h1>{album.name}</h1>
@@ -54,7 +60,7 @@ const mapStateToProps = (state) => ({ ...state });
 const mapDispatchToProps = (dispatch) => ({
     getAlbumById: (id) => dispatch(getAlbumById(id)),
     getSongsByAlbum: (id) => dispatch(getSongsByAlbum(id)),
-    addAlbumToHistory: (id) => dispatch(addAlbumToHistory(id))
+    addAlbumToHistory: (album) => dispatch(addAlbumToHistory(album))
 });
 
 export default connect(

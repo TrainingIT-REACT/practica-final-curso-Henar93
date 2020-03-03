@@ -4,14 +4,15 @@ import { connect } from "react-redux";
 import { getSongRep } from '../storeMusic/StoreMusic';
 import Loader from '../Menu/Loader';
 import { addSongToHistory } from '../actions/user';
+
+let added = false ; 
 class Reproductor extends React.Component {
     componentDidMount() {
    
         this.props.getSongRep(this.props.match.params.id);
-        this.props.addSongToHistory(this.props.match.params.id);
-       
-        console.log('a'); 
-
+        
+    
+        added=false;
     }
 
     render(){
@@ -22,7 +23,10 @@ class Reproductor extends React.Component {
             return <p>Error al obtener los datos</p>   
         } else if(this.props.albums.song !== undefined && this.props.albums.song !== null) {   
             let song = this.props.albums.song;
-
+            if(!added){
+                this.props.addSongToHistory(song);
+                added=true;
+            }
             console.log(song)
 
             return(
@@ -46,7 +50,7 @@ const mapStateToProps = (state) => ({ ...state });
 
 const mapDispatchToProps = (dispatch) => ({
     getSongRep: (id) => dispatch(getSongRep(id)),
-    addSongToHistory: (id) => dispatch(addSongToHistory(id))
+    addSongToHistory: (song) => dispatch(addSongToHistory(song))
 });
 
 export default connect(

@@ -22,7 +22,7 @@ const reducer = (state = initialState, action) => {
     case types.ADD_TO_HISTORY:
       return {
         ...state, 
-        id_cancion_escuchada:state.id_cancion_escuchada.concat(action.id)
+        id_cancion_escuchada:state.id_cancion_escuchada.concat(action.song)
       };
     case types.ALBUM_TO_HISTORY:
       return {

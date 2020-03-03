@@ -35,9 +35,9 @@ export const updateEdad= (edad) => ({
 });
 
 
-export const addSongToHistory = (id) => ({
+export const addSongToHistory = (song) => ({
   type: types.ADD_TO_HISTORY,
-  id
+  song
 });
 
 
