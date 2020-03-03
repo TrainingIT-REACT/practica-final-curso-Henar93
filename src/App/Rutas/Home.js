@@ -1,9 +1,9 @@
 import React from "react";
-import {  BrowserRouter as Router, NavLink, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import {getTopAlbums}  from '../storeMusic/StoreMusic';
 import Loader from '../Menu/Loader';
-
+import './Home.css';
 
 class Home extends React.Component{
   componentDidMount() {
@@ -22,22 +22,26 @@ class Home extends React.Component{
         console.log(this.props.albums);
         return (
           <div>
-            <div>
+            <div className='TopAlbums'>
               <h1>Top exitos</h1>
             </div>
-            <div>
+            <div className='Lista' >
                <ul>
                   { this.props.albums.albums.map((album) => (
                   <li key={album.id}>
-                    {'Nombre: ' + album.name}{'Id: '+ album.id}
-                    <img className="cover" src={album.cover}/> 
+                    <div className='infoA'>
+                      {'Nombre: ' + album.name}<br></br>{' Id: '+ album.id}
+                      <div className='Cover'>
+                        <img className="cover" alt="" src={album.cover}/> 
+                      </div>
+                    </div>
                   </li>
                         ))}
                 </ul>
             </div>
           <div>
             <hr></hr>
-            <h3> Ya puedes descubir las últimas novedades</h3>
+            <p> Ya puedes descubir las últimas novedades</p>
             <NavLink  to="/musica" style={{color: '#660066', textDecoration: 'inherit'}} activeStyle={{color: 'red', textDecoration: 'none'}} >Música</NavLink>
                  
 

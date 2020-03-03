@@ -65,4 +65,9 @@
  } 
 .minombre h2{
     color:white;
+    
+}
+
+.Label {
+    opacity:0;
 }

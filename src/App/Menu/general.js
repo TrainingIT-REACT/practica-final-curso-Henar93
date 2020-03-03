@@ -64,7 +64,13 @@ class Navbar extends React.Component {
                         <div className="navbar-header">
                             <ul>
                                 <li>
-                                    <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}} to="/home" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/><path d="M0 0h24v24H0z" fill="none" /></svg></NavLink>
+                                    <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}}  to="/home" >
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30" alt="">
+                                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                                            <path d="M0 0h24v24H0z" fill="none" />
+                                        </svg>
+                                        <label className="Label">.</label>
+                                    </NavLink>
                                 </li>
                                 <li> 
                                     <div className="dropdown">
@@ -113,7 +119,7 @@ class Navbar extends React.Component {
 };
 //Navbar = withRouter(Navbar);  
 
-const mapStateToProps = (state) => ({ ...state }); 
+
 export default Navbar;
 
 

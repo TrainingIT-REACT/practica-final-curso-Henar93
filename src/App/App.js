@@ -1,6 +1,6 @@
 
-import React, { Component, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route , NavLink} from "react-router-dom";
+import React, { Component, Suspense } from 'react';
+import { BrowserRouter as Router} from "react-router-dom";
 
 
 // Css
@@ -55,17 +55,15 @@ class App extends Component {
 
       // <Suspense maxDuration={150} fallback="Cargando página">
       <Suspense fallback={<Loader />}>
-      <Router>
-        <div className="App"> 
-         
+         <Router>
+           <div className="App"> 
             <Navbar/>        
             <div className="container">    
-            <hr></hr>  
-               
+            <hr></hr>   
             </div>
          </div>
 
-</Router>
+        </Router>
     </Suspense>
     );
   }

@@ -1,0 +1,24 @@
+.TopAlbums{
+    margin-top: 2%;
+    padding: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+}
+.TopAlbums .Lista{
+    display: table;
+    padding: 0;
+    border: none;
+}
+
+
+.TopAlbums .Lista .infoA{
+    display: table-cell;
+    vertical-align: bottom;
+    border: none;
+    width: 25%;
+}
+
+.mejoresAlbumes .Lista .Cover img{
+    width: 60%;
+}

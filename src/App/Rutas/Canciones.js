@@ -3,7 +3,7 @@ import {NavLink}  from "react-router-dom";
 
 import { connect } from "react-redux";
 
-import { getSongsByAlbum, getAlbums } from '../storeMusic/StoreMusic';
+import { getSongsByAlbum } from '../storeMusic/StoreMusic';
 import { getAlbumById } from '../storeMusic/StoreMusic';
 
 import Loader from '../Menu/Loader';
@@ -46,7 +46,7 @@ class Canciones extends React.Component {
                         ))}
                     </ul>
                     </div>
-                    <div><img className="cover" src={album.cover}/></div>
+                    <div><img className="cover" alt="" src={album.cover}/></div>
                 </div>
             )
         } else {
