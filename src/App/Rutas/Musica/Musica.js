@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavLink}  from "react-router-dom";
 import { connect } from "react-redux";
-import {  getAlbums } from '../storeMusic/StoreMusic';
-import Loader from '../Menu/Loader';
+import {  getAlbums } from '../../storeMusic/StoreMusic';
+import Loader from '../../Menu/Loader';
 
 
 
@@ -10,10 +10,6 @@ import Loader from '../Menu/Loader';
 class Album extends React.Component{
      componentDidMount() {
          this.props.getAlbums();
-        //  console.log(this.props);
-        //  this.props.getAlbumById(this.props);
-        //  this.props.getSongsByAlbum(this.props);
-       
      }
 
     render(){
@@ -23,11 +19,8 @@ class Album extends React.Component{
         } else if (this.props.albums.error) {
             return <p>Error al obtener los datos</p>
         }else if(this.props.albums !== undefined){
-            // const Aaa = ({ albums }) => {
-
-                
                 return(
-                    <ul>
+                    <ul id="albumsList">
                         { this.props.albums.albums.map((album) => (
                         <li key={album.id}>
                             {'Nombre: ' + album.name}{'Id: '+ album.id}

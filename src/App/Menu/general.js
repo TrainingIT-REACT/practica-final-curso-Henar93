@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import {Provider} from "react-redux";
 import './general.css';
-import Musica from '../Rutas/Musica';
+import Musica from '../Rutas/Musica/Musica';
 import About from '../Rutas/About';
 import Login from '../Rutas/login';
 import Home from '../Rutas/Home';
