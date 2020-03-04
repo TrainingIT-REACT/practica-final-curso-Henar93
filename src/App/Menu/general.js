@@ -59,7 +59,7 @@ class Navbar extends React.Component {
                         <div className="navbar-header">
                             <ul>
                                 <li>
-                                    <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}}  to="/home" >
+                                    <NavLink activeStyle={{borderBottom: 'solid 3px #fff', paddingBottom: '1em'}}  to="/" >
                                         <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30" alt="">
                                             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                                             <path d="M0 0h24v24H0z" fill="none" />
@@ -101,7 +101,7 @@ class Navbar extends React.Component {
                 <Route path="/inicio_sesion" exact component={Login} /> 
                 <Route path="/about" exact component={About} />
                 <Route path="/history" exact component={History} /> 
-                <Route path="/home" exact component={Home} /> 
+                <Route path="/" exact component={Home} /> 
                 <Route path="/cerrar" exact component={Cerrar} /> 
                 <PrivateRoute path="/perfil" exact component={Perfil} />
                 <PrivateRoute path={"/canciones/:id"} component={Canciones} exact/>

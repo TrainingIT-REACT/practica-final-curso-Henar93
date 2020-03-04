@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import '@babel/polyfill'; 
+import'whatwg-fetch'; 
+
 ReactDOM.render(
   <main>
     <App />
