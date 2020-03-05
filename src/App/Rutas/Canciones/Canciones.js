@@ -46,7 +46,7 @@ class Canciones extends React.Component {
                         ))}
                     </ul>
                     </div>
-                    <div><img className="cover" alt="" src={album.cover}/></div>
+                    <img className="cover" alt="" src={"http://localhost:3001"+album.cover}/>
                 </div>
             )
         } else {

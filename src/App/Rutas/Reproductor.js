@@ -34,7 +34,7 @@ class Reproductor extends React.Component {
                     {song.name}
                     <hr></hr>
                     <audio controls>
-                    <source src={song.audio} type="audio/mpeg"></source>
+                    <source src={"http://localhost:3001"+song.audio} type="audio/mpeg"></source>
                     </audio> 
  
                   

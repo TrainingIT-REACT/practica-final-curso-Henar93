@@ -24,7 +24,7 @@ class Album extends React.Component{
                         { this.props.albums.albums.map((album) => (
                         <li key={album.id}>
                             {'Nombre: ' + album.name}{'Id: '+ album.id}
-                            <img className="cover" alt="" src={album.cover} /> 
+                            <img className="cover" alt="" src={"http://localhost:3001"+album.cover} /> 
                             <NavLink activeClassName="active" to={"/canciones/"+album.id} >{album.name}</NavLink>
                         </li>
                         ))}

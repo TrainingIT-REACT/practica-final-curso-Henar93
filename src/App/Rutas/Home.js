@@ -32,7 +32,7 @@ class Home extends React.Component{
                     <div className='infoA'>
                       {'Nombre: ' + album.name}<br></br>{' Id: '+ album.id}
                       <div className='Cover'>
-                        <img className="cover" alt="" src={album.cover}/> 
+                        <img className="cover" alt="" src={"http://localhost:3001"+album.cover}/> 
                       </div>
                     </div>
                   </li>
@@ -50,7 +50,7 @@ class Home extends React.Component{
             
           )
         }else{
-          // return <Loader />
+          return <Loader />
       }
       }
 };
