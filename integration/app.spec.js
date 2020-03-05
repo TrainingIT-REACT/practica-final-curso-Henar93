@@ -1,6 +1,6 @@
 describe('Init', () => {
     beforeEach(async () => {
-      await page.goto('http://localhost:3000/perfil');
+      await page.goto('http://localhost:8080/perfil');
     });
   
     it("should display the title", async () => {

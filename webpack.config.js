@@ -46,9 +46,9 @@ const config= {
             }
         ),
         new WebpackPwaManifest({
-            name: 'Mi primera app con ReactJS: Henarfy',
+            name: 'Mi primera app con ReactJS: Reactfy',
             short_name: 'Reactify',
-            description: 'Mi primera app con ReactJS: Henarfy',
+            description: 'Mi primera app con ReactJS: Reactfy',
             background_color: '#333333',
             theme_color: '#000000',
             'theme-color': '#000000',

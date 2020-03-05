@@ -50,7 +50,7 @@ class Home extends React.Component{
             
           )
         }else{
-          return <Loader />
+          // return <Loader />
       }
       }
 };
