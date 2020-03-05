@@ -11,7 +11,7 @@ export const getAlbumById = createAsyncAction('ALBUM', async (id) => {
 });
 
 export const getSongsByAlbum = createAsyncAction('SONGS', async (id) => {
-    const res = await fetch('http://localhost:3001/songs?album_id='+id);
+    const res = await fetch('/songs?album_id='+id);
     return await res.json();
 });
 export const getTopAlbums = createAsyncAction('ALBUMS', async () => {

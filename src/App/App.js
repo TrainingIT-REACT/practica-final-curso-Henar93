@@ -11,7 +11,7 @@ import './App.css';
 
 
 //import Navbar from './Menu/general.js';
-import Loader from './Menu/Loader';
+// import Loader from './Menu/Loader';
 
 // Otros componentes
 
@@ -53,8 +53,8 @@ class App extends Component {
     
     return (
 
-      // <Suspense maxDuration={150} fallback="Cargando página">
-      <Suspense fallback={<Loader />}>
+     <Suspense maxDuration={100000} fallback="Cargando página">
+      {/* // <Suspense fallback={<Loader />}> */}
          <Router>
            <div className="App"> 
             <Navbar/>        
