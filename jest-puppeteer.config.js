@@ -1,5 +1,5 @@
 module.exports = {
-    serve: {
+    server: {
       command: "yarn serve",
       launchTimeout: 30000,
       port: 3000,
