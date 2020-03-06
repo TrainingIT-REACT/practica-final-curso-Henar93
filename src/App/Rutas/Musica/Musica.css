@@ -1,0 +1,44 @@
+.Albums{
+    margin-top: 2%;
+    padding: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+}
+.Albums .Lista{
+    display: table;
+    padding: 0;
+    border: none;
+}
+
+
+.Albums .Lista .infoA{
+    display: table-cell;
+    vertical-align: bottom;
+    border: none;
+    width: 25%;
+}
+
+.Albumes .Lista .Cover img{
+    width: 20%;
+    vertical-align: top;
+}
+
+#albumsList {
+    list-style-type: none;
+}
+
+#albumsList li {
+    margin: 1em;
+}
+
+#albumsList img.cover {
+    width: 50px;
+    vertical-align: top;
+    margin: 0 1em;
+}
+
+.albumDetails {
+    width: 50%;
+    display: inline-block;
+}

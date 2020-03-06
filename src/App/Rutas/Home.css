@@ -17,8 +17,24 @@
     vertical-align: bottom;
     border: none;
     width: 25%;
+    text-align: center;
 }
 
 .mejoresAlbumes .Lista .Cover img{
     width: 60%;
+}
+
+.Lista li {
+    width: 33% !important;
+    display: inline-block;
+}
+
+.infoA {    
+    text-align: center;
+}
+
+.homeFooter p {
+    font-size: 20px;
+    font-weight: 900;    
+    padding: 0 20px;
 }

@@ -101,7 +101,7 @@ class Navbar extends React.Component {
                 <Route path="/inicio_sesion" exact component={Login} /> 
                 <Route path="/about" exact component={About} />
                 <Route path="/history" exact component={History} /> 
-                <Route path="/home" exact component={Home} /> 
+                <Route path="/" exact component={Home} /> 
                 <Route path="/cerrar" exact component={Cerrar} /> 
                 <PrivateRoute path="/perfil" exact component={Perfil} />
                 <PrivateRoute path={"/canciones/:id"} component={Canciones} exact/>

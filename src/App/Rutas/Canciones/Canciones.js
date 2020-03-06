@@ -9,6 +9,8 @@ import { getAlbumById } from '../../storeMusic/StoreMusic';
 import Loader from '../../Menu/Loader';
 import { addAlbumToHistory } from '../../actions/user';
 
+import './Canciones.css';
+
 let added = false ; 
 class Canciones extends React.Component {
     componentDidMount() {
@@ -34,7 +36,7 @@ class Canciones extends React.Component {
                 added=true;
             }
             return(
-                <div>
+                <div className="albumDtls"> 
                     <h1>{album.name}</h1>
                     <div>
                     <ul>

@@ -8,7 +8,6 @@ import './Home.css';
 class Home extends React.Component{
   componentDidMount() {
     this.props.getTopAlbums();
-    console.log("Mira aqui");
     console.log(this.props.albums);
   }
     render(){
@@ -30,20 +29,20 @@ class Home extends React.Component{
                   { this.props.albums.albums.map((album) => (
                   <li key={album.id}>
                     <div className='infoA'>
-                      {'Nombre: ' + album.name}<br></br>{' Id: '+ album.id}
                       <div className='Cover'>
                         <img className="cover" alt="" src={"http://localhost:3001"+album.cover}/> 
                       </div>
+                      <b>{'Nombre: ' + album.name}</b><br></br>{' Id: '+ album.id}                      
                     </div>
                   </li>
                         ))}
                 </ul>
             </div>
-          <div>
+          <div className='homeFooter'>
             <hr></hr>
-            <p> Ya puedes descubir las últimas novedades</p>
-            <NavLink  to="/musica" style={{color: '#660066', textDecoration: 'inherit'}} activeStyle={{color: 'red', textDecoration: 'none'}} >Música</NavLink>
-                 
+            <p> Ya puedes descubir las últimas novedades 
+            <NavLink  to="/musica" style={{color: '#660066', textDecoration: 'inherit'}} activeStyle={{color: 'red', textDecoration: 'none'}} > Aquí</NavLink>
+            </p>
 
             </div>
             </div>

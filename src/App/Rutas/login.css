@@ -11,3 +11,16 @@ button {
     cursor: pointer;
     border-radius: 15%;
   }
+
+form.updateName {
+  padding: 0 2em;
+}
+
+.updateName div {
+  width: 19%;
+  padding: 6px 0px;
+}
+
+.updateName div input {
+  float: right;
+}
