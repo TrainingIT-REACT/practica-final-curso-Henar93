@@ -5,13 +5,14 @@ import { connect } from 'react-redux';
 // Contexto de usuario
 import UserContext from '../Context/user';
 import { updateName } from '../actions/user';
+import './Cerrar.css'
 
 
 const Cerrar = ({ location, updateName }) => {
   return <UserContext.Consumer>
 
     {({ signedIn, updateUser }) => {
-      return <div>
+      return <div className='CerrarSesion'>
         { signedIn ? (
             <>
             <h2>¿Estás seguro de que quieres cerrar sesión?</h2>

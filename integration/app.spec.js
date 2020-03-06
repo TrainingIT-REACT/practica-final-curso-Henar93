@@ -1,10 +1,11 @@
 describe('Init', () => {
     beforeEach(async () => {
-      await page.goto('http://localhost:8080/perfil');
+      await page.goto('http://localhost:8080/');
+      console.log(page)
     });
   
     it("should display the title", async () => {
-      await expect(page).toMatchElement('h1', { text: 'Perfil del usuario' });
+      await expect(page).toMatchElement('p', { text: 'Error al obtener los datos' });
     });
   
     // it("should update the name after submit", async () => {

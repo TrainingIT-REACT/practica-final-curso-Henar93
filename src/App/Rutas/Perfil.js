@@ -21,11 +21,11 @@ class Perfil extends React.Component{
          
       }
     render(){
-        return <div>
+        return <div className='FormPerfil'>
 
                    <h1> Perfil del usuario</h1>
                     <hr></hr>  
-                    <p><UpdatePerfil/></p>
+                    <UpdatePerfil/>
                
                     <hr></hr>  
                     <UpPerfil/>

@@ -1,0 +1,10 @@
+.rep {
+ align-content: center;
+}
+
+.NombreCancion {
+    text-align: center;
+    font-size: x-large;
+    font-style: normal;
+    font-weight: bolder;
+}

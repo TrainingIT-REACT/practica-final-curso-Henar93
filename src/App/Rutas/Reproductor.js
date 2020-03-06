@@ -5,6 +5,7 @@ import { getSongRep } from '../storeMusic/StoreMusic';
 import Loader from '../Menu/Loader';
 import { addSongToHistory } from '../actions/user';
 
+import './Reproductor.css'
 let added = false ; 
 class Reproductor extends React.Component {
     componentDidMount() {
@@ -30,10 +31,10 @@ class Reproductor extends React.Component {
             console.log(song)
 
             return(
-                <div>
+                <div className='NombreCancion'>
                     {song.name}
                     <hr></hr>
-                    <audio controls>
+                    <audio controls className='rep'>
                     <source src={"http://localhost:3001"+song.audio} type="audio/mpeg"></source>
                     </audio> 
  
